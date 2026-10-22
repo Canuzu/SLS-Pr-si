@@ -46,6 +46,17 @@
     background: #fff;
   }
   .logo { height: 21.5mm; display: block; }
+  .club-wrap {
+    display: flex;
+    align-items: center;
+    gap: 4.4mm;
+  }
+  .club-logo {
+    display: block;
+    width: 23mm;
+    height: 23mm;
+    filter: drop-shadow(0 .6mm 1.2mm rgba(0,0,0,.18));
+  }
   .club {
     text-align: right;
     display: flex;
@@ -312,37 +323,43 @@
   }
   .advisors-head .section-title { font-size: 15pt; margin: 0; }
   .advisors-head .eyebrow { color: var(--gray); }
-  .people { display: grid; grid-template-columns: 1fr 1fr; gap: 3.6mm; }
+  .team {
+    display: grid;
+    grid-template-columns: 1fr 1fr 74mm;
+    background: #fff;
+    border-radius: 2.2mm;
+    overflow: hidden;
+    box-shadow: 0 .4mm 1mm rgba(0,0,0,.04), 0 2mm 6mm rgba(40, 20, 20, .06);
+  }
   .person {
     display: flex;
     align-items: center;
-    gap: 4mm;
-    background: #fff;
-    border-radius: 2.2mm;
-    padding: 4mm 4.6mm;
-    box-shadow: 0 .4mm 1mm rgba(0,0,0,.04), 0 2mm 6mm rgba(40, 20, 20, .06);
+    gap: 3.4mm;
+    padding: 5.2mm 4.6mm;
   }
+  .person + .person { border-left: .3mm solid var(--line); }
   .mono {
     flex: none;
-    width: 15mm;
-    height: 15mm;
+    width: 12.5mm;
+    height: 12.5mm;
     border-radius: 50%;
     background: linear-gradient(140deg, var(--red-light), var(--red-dark));
     color: #fff;
     display: grid;
     place-items: center;
     font-family: var(--serif);
-    font-size: 17pt;
+    font-size: 14.5pt;
     font-weight: 500;
     letter-spacing: .02em;
-    box-shadow: 0 0 0 .8mm #fff, 0 0 0 1.1mm #F2C9CE;
+    box-shadow: 0 0 0 .7mm #fff, 0 0 0 1mm #F2C9CE;
   }
   .person-name {
     font-family: var(--serif);
-    font-size: 15pt;
+    font-size: 14pt;
     font-weight: 600;
     color: var(--ink);
     line-height: 1.05;
+    white-space: nowrap;
   }
   .person-role {
     font-size: 6.4pt;
@@ -350,18 +367,56 @@
     letter-spacing: .16em;
     text-transform: uppercase;
     color: var(--red);
-    margin-top: .8mm;
+    margin-top: .9mm;
   }
-  .contact { margin-top: 1.8mm; display: grid; gap: .9mm; }
-  .contact div {
+  .reach {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4mm 5.4mm;
+    background: linear-gradient(140deg, var(--red) 0%, var(--red-dark) 100%);
+    color: #fff;
+  }
+  .reach-label {
+    font-size: 6.4pt;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.8);
+  }
+  .reach-phone {
     display: flex;
     align-items: center;
-    gap: 1.6mm;
-    font-size: 7.7pt;
-    color: var(--text);
+    gap: 2.2mm;
+    margin-top: 1.4mm;
+    font-family: var(--serif);
+    font-size: 19pt;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: .01em;
     white-space: nowrap;
   }
-  .contact svg { flex: none; width: 3mm; height: 3mm; stroke: var(--red); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .reach-mail {
+    display: flex;
+    align-items: center;
+    gap: 2.2mm;
+    margin-top: 1.8mm;
+    font-size: 7.8pt;
+    white-space: nowrap;
+  }
+  .reach svg { flex: none; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .reach-phone svg { width: 4.2mm; height: 4.2mm; }
+  .reach-mail svg { width: 4.2mm; height: 3.2mm; }
+  .reach-ribbon {
+    position: absolute;
+    right: -8mm;
+    top: -10mm;
+    width: 34mm;
+    height: 34mm;
+    opacity: .12;
+  }
 
   /* ---------- Footer ---------- */
   .footer {
@@ -394,10 +449,13 @@
   <!-- Header -->
   <header class="header">
     <img class="logo" src="swisslife-select-logo.png" alt="Swiss Life Select">
-    <div class="club">
-      <span class="club-kicker">Partner im Sportsponsoring</span>
-      <span class="club-name">VfB Schleiden</span>
-      <span class="club-sport">Handball</span>
+    <div class="club-wrap">
+      <div class="club">
+        <span class="club-kicker">Partner im Sportsponsoring</span>
+        <span class="club-name">VfB Schleiden</span>
+        <span class="club-sport">Handball</span>
+      </div>
+      <img class="club-logo" src="vfb-schleiden-logo.png" alt="VfB Schleiden e.V.">
     </div>
   </header>
 
@@ -538,16 +596,12 @@
       <div class="section-title">Deine Ansprechpartner</div>
       <div class="eyebrow">Swiss Life Select</div>
     </div>
-    <div class="people">
+    <div class="team">
       <div class="person">
         <div class="mono">MB</div>
         <div>
           <div class="person-name">Mathias Braun</div>
           <div class="person-role">Finanzcoach</div>
-          <div class="contact">
-            <div><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0XXX XXX XXXX</div>
-            <div><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>mathias.braun@swisslife-select.de</div>
-          </div>
         </div>
       </div>
       <div class="person">
@@ -555,11 +609,16 @@
         <div>
           <div class="person-name">Lukas Klug</div>
           <div class="person-role">Finanzcoach</div>
-          <div class="contact">
-            <div><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0XXX XXX XXXX</div>
-            <div><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>lukas.klug@swisslife-select.de</div>
-          </div>
         </div>
+      </div>
+      <div class="reach">
+        <svg class="reach-ribbon" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M5 70 C 30 40, 60 30, 100 25 L 100 45 C 70 48, 40 60, 15 90 Z" fill="#fff"/>
+          <path d="M20 100 C 45 75, 70 62, 100 58 L 100 75 C 78 78, 58 88, 40 105 Z" fill="#fff"/>
+        </svg>
+        <div class="reach-label">Direkter Draht</div>
+        <div class="reach-phone"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0177 8964878</div>
+        <div class="reach-mail"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>mathias.braun@swisslife-select.de</div>
       </div>
     </div>
   </section>
