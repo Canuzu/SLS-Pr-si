@@ -55,7 +55,6 @@
     display: block;
     width: 23mm;
     height: 23mm;
-    filter: drop-shadow(0 .6mm 1.2mm rgba(0,0,0,.18));
   }
   .club {
     text-align: right;
@@ -100,7 +99,7 @@
   .hero {
     position: relative;
     z-index: 2;
-    height: 85mm;
+    height: 89mm;
     margin-top: -1px;
     background: linear-gradient(128deg, var(--red-light) 0%, var(--red) 42%, var(--red-dark) 78%, var(--red-deep) 100%);
     clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%);
@@ -111,7 +110,7 @@
   .hero-content {
     position: relative;
     z-index: 2;
-    padding: 9.5mm calc(14mm + var(--b)) 0;
+    padding: 11mm calc(14mm + var(--b)) 0;
     width: calc(140mm + var(--b));
   }
   .kicker {
@@ -152,7 +151,6 @@
     font-size: 9pt;
     font-weight: 700;
     border-radius: 1mm;
-    box-shadow: 0 2mm 5mm rgba(80, 0, 10, .25);
   }
   .intro {
     margin-top: 2.8mm;
@@ -168,12 +166,11 @@
     position: absolute;
     z-index: 4;
     right: calc(15mm + var(--b));
-    top: calc(87mm + var(--b));
+    top: calc(91mm + var(--b));
     width: 33mm;
     height: 33mm;
     border-radius: 50%;
     background: #fff;
-    box-shadow: 0 3mm 8mm rgba(60, 0, 8, .22), 0 0 0 1.4mm rgba(255,255,255,.35);
     transform: rotate(-8deg);
   }
   .badge svg { width: 100%; height: 100%; display: block; }
@@ -183,7 +180,7 @@
     position: relative;
     z-index: 1;
     margin-top: -1mm;
-    padding: 4mm calc(14mm + var(--b)) 0;
+    padding: 5mm calc(14mm + var(--b)) 0;
   }
   .section-head { margin-bottom: 3.4mm; }
   .eyebrow {
@@ -204,14 +201,14 @@
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3.8mm;
+    gap: 4.2mm;
   }
   .card {
     position: relative;
     background: #fff;
     border-radius: 2.2mm;
-    padding: 4.3mm 4.6mm 4.4mm 4.6mm;
-    box-shadow: 0 .4mm 1mm rgba(0,0,0,.04), 0 2mm 6mm rgba(40, 20, 20, .06);
+    border: .3mm solid var(--line);
+    padding: 5.4mm 5mm 5.4mm 4.6mm;
     display: grid;
     grid-template-columns: 11.5mm 1fr;
     column-gap: 3.2mm;
@@ -220,7 +217,7 @@
   .card::after {
     content: "";
     position: absolute;
-    left: 0; top: 4.3mm; bottom: 4.3mm;
+    left: 0; top: 5.4mm; bottom: 5.4mm;
     width: .7mm;
     background: var(--red);
     border-radius: 0 .4mm .4mm 0;
@@ -234,26 +231,21 @@
     padding-top: .4mm;
   }
   .q {
-    font-size: 6.6pt;
+    font-size: 6.7pt;
     font-weight: 700;
-    letter-spacing: .1em;
+    letter-spacing: .08em;
     text-transform: uppercase;
     color: var(--gray);
   }
   .a {
     font-family: var(--serif);
-    font-size: 12.4pt;
+    font-size: 15pt;
     font-weight: 600;
-    line-height: 1.12;
+    line-height: 1.14;
     color: var(--ink);
-    margin-top: 1.1mm;
+    margin-top: 1.6mm;
   }
-  .p {
-    font-size: 7.9pt;
-    line-height: 1.46;
-    color: var(--text);
-    margin-top: 1.3mm;
-  }
+  .card:not(.cta) > div:nth-child(2) { align-self: center; }
   .lead { display: flex; flex-direction: column; align-items: flex-start; gap: 2.6mm; }
   .icon {
     width: 8mm;
@@ -266,6 +258,7 @@
   .icon svg { width: 4.3mm; height: 4.3mm; stroke: var(--red); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
   .card.cta {
+    border: none;
     background: linear-gradient(140deg, var(--red) 0%, var(--red-dark) 100%);
     color: #fff;
     display: flex;
@@ -303,7 +296,6 @@
     bottom: -14mm;
     width: 44mm;
     height: 44mm;
-    opacity: .14;
   }
 
   /* ---------- Advisors ---------- */
@@ -329,7 +321,7 @@
     background: #fff;
     border-radius: 2.2mm;
     overflow: hidden;
-    box-shadow: 0 .4mm 1mm rgba(0,0,0,.04), 0 2mm 6mm rgba(40, 20, 20, .06);
+    border: .3mm solid var(--line);
   }
   .person {
     display: flex;
@@ -406,7 +398,7 @@
     font-size: 7.8pt;
     white-space: nowrap;
   }
-  .reach svg { flex: none; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .reach-phone svg, .reach-mail svg { flex: none; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
   .reach-phone svg { width: 4.2mm; height: 4.2mm; }
   .reach-mail svg { width: 4.2mm; height: 3.2mm; }
   .reach-ribbon {
@@ -415,7 +407,6 @@
     top: -10mm;
     width: 34mm;
     height: 34mm;
-    opacity: .12;
   }
 
   /* ---------- Footer ---------- */
@@ -462,21 +453,9 @@
   <!-- Hero -->
   <section class="hero">
     <svg class="hero-art" viewBox="0 0 210 98" preserveAspectRatio="none" aria-hidden="true">
-      <defs>
-        <linearGradient id="rib1" x1="0" y1="1" x2="1" y2="0">
-          <stop offset="0" stop-color="#fff" stop-opacity="0"/>
-          <stop offset=".55" stop-color="#fff" stop-opacity=".10"/>
-          <stop offset="1" stop-color="#fff" stop-opacity=".02"/>
-        </linearGradient>
-        <linearGradient id="rib2" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#5A0812" stop-opacity="0"/>
-          <stop offset=".6" stop-color="#5A0812" stop-opacity=".28"/>
-          <stop offset="1" stop-color="#5A0812" stop-opacity=".45"/>
-        </linearGradient>
-      </defs>
       <!-- flowing ribbons, inspired by the Swiss Life flag -->
-      <path d="M-10 78 C 40 40, 95 30, 150 22 S 205 6, 230 -6 L 230 18 C 200 30, 170 38, 140 44 S 60 70, -10 104 Z" fill="url(#rib1)"/>
-      <path d="M60 110 C 100 80, 140 62, 175 52 S 215 40, 235 30 L 235 110 Z" fill="url(#rib2)"/>
+      <path d="M-10 78 C 40 40, 95 30, 150 22 S 205 6, 230 -6 L 230 18 C 200 30, 170 38, 140 44 S 60 70, -10 104 Z" fill="#fff" fill-opacity=".07"/>
+      <path d="M60 110 C 100 80, 140 62, 175 52 S 215 40, 235 30 L 235 110 Z" fill="#5A0812" fill-opacity=".22"/>
       <path d="M-10 40 C 30 30, 70 10, 110 -8" stroke="#fff" stroke-opacity=".10" stroke-width=".5" fill="none"/>
       <path d="M-10 46 C 34 36, 78 16, 120 -8" stroke="#fff" stroke-opacity=".06" stroke-width=".5" fill="none"/>
     </svg>
@@ -490,7 +469,7 @@
       </g>
     </svg>
     <!-- speed lines -->
-    <svg style="position:absolute; right:calc(58mm + var(--b)); top:46mm; width:24mm; height:26mm; z-index:1" viewBox="0 0 36 40" preserveAspectRatio="none" aria-hidden="true">
+    <svg style="position:absolute; right:calc(58mm + var(--b)); top:50mm; width:24mm; height:26mm; z-index:1" viewBox="0 0 36 40" preserveAspectRatio="none" aria-hidden="true">
       <g stroke="#fff" stroke-linecap="round" fill="none">
         <line x1="14" y1="8"  x2="35" y2="8"  stroke-opacity=".22" stroke-width="1"/>
         <line x1="4"  y1="17" x2="35" y2="17" stroke-opacity=".30" stroke-width="1"/>
@@ -514,7 +493,8 @@
       <defs>
         <path id="ring" d="M50 50 m-37 0 a37 37 0 1 1 74 0 a37 37 0 1 1 -74 0"/>
       </defs>
-      <circle cx="50" cy="50" r="46" fill="none" stroke="#D42034" stroke-width=".6" stroke-opacity=".35"/>
+      <circle cx="50" cy="50" r="49.1" fill="none" stroke="#D42034" stroke-width="1.6"/>
+      <circle cx="50" cy="50" r="45.6" fill="none" stroke="#EFC3C9" stroke-width=".5"/>
       <text font-family="Inter, sans-serif" font-size="6.9" font-weight="700" fill="#D42034">
         <textPath href="#ring" startOffset="0" textLength="230" lengthAdjust="spacing">STOLZER SPONSOR · VFB SCHLEIDEN HANDBALL · </textPath>
       </text>
@@ -535,8 +515,7 @@
         <div class="lead"><div class="num">01</div><div class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div></div>
         <div>
           <div class="q">Was erwartet Dich als Tester?</div>
-          <div class="a">Kontaktanruf mit Terminabsprache.</div>
-          <p class="p">Mathias Braun oder Lukas Klug melden sich telefonisch bei Dir und vereinbaren einen Kennenlern-Termin mit Dir.</p>
+          <div class="a">Kontaktanruf mit<br>Terminabsprache.</div>
         </div>
       </article>
 
@@ -544,8 +523,7 @@
         <div class="lead"><div class="num">02</div><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div></div>
         <div>
           <div class="q">Worum geht es in den Terminen?</div>
-          <div class="a">Stärken unserer Beratung zeigen.</div>
-          <p class="p">Du musst hierbei <em>kein</em> Kunde werden – prüfe unsere Dienstleistung aber mit echtem Interesse auf Herz und Nieren.</p>
+          <div class="a">Stärken unserer<br>Beratung zeigen.</div>
         </div>
       </article>
 
@@ -553,8 +531,7 @@
         <div class="lead"><div class="num">03</div><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div></div>
         <div>
           <div class="q">Wie lange dauert die Beratung?</div>
-          <div class="a">Mind. 2 Termine à 60–90 Min.</div>
-          <p class="p">Gerne auch mehr, wenn Du größeres Interesse mitbringst und/oder im Beratungsprozess weitere Fragen aufkommen.</p>
+          <div class="a">Mind. 2 Termine<br>à 60–90 Min.</div>
         </div>
       </article>
 
@@ -562,8 +539,7 @@
         <div class="lead"><div class="num">04</div><div class="icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg></div></div>
         <div>
           <div class="q">Welche Voraussetzungen benötigst Du?</div>
-          <div class="a">Generelles Interesse am Thema Finanzen.</div>
-          <p class="p">Du bist volljährig, hast eine abgeschlossene Berufsausbildung oder ein Studium und bist zurzeit berufstätig.</p>
+          <div class="a">Generelles Interesse<br>am Thema Finanzen.</div>
         </div>
       </article>
 
@@ -571,15 +547,14 @@
         <div class="lead"><div class="num">05</div><div class="icon"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div></div>
         <div>
           <div class="q">Wo findet die Beratung statt?</div>
-          <div class="a">Je nach telefonischer Absprache.</div>
-          <p class="p">Grundsätzlich beraten wir in der Kanzlei, digital per Videocall oder ganz bequem bei Dir zu Hause.</p>
+          <div class="a">Je nach telefonischer<br>Absprache.</div>
         </div>
       </article>
 
       <article class="card cta">
         <svg class="cta-ribbon" viewBox="0 0 100 100" aria-hidden="true">
-          <path d="M5 70 C 30 40, 60 30, 100 25 L 100 45 C 70 48, 40 60, 15 90 Z" fill="#fff"/>
-          <path d="M20 100 C 45 75, 70 62, 100 58 L 100 75 C 78 78, 58 88, 40 105 Z" fill="#fff"/>
+          <path d="M5 70 C 30 40, 60 30, 100 25 L 100 45 C 70 48, 40 60, 15 90 Z" fill="#fff" fill-opacity=".14"/>
+          <path d="M20 100 C 45 75, 70 62, 100 58 L 100 75 C 78 78, 58 88, 40 105 Z" fill="#fff" fill-opacity=".14"/>
         </svg>
         <div class="cta-title">Mach mit!</div>
         <p class="cta-text">Werde Testmandant und erlebe unsere Beratung aus erster Hand. Fragen vorab? Sprich uns jederzeit direkt an.</p>
@@ -613,8 +588,8 @@
       </div>
       <div class="reach">
         <svg class="reach-ribbon" viewBox="0 0 100 100" aria-hidden="true">
-          <path d="M5 70 C 30 40, 60 30, 100 25 L 100 45 C 70 48, 40 60, 15 90 Z" fill="#fff"/>
-          <path d="M20 100 C 45 75, 70 62, 100 58 L 100 75 C 78 78, 58 88, 40 105 Z" fill="#fff"/>
+          <path d="M5 70 C 30 40, 60 30, 100 25 L 100 45 C 70 48, 40 60, 15 90 Z" fill="#fff" fill-opacity=".12"/>
+          <path d="M20 100 C 45 75, 70 62, 100 58 L 100 75 C 78 78, 58 88, 40 105 Z" fill="#fff" fill-opacity=".12"/>
         </svg>
         <div class="reach-label">Direkter Draht</div>
         <div class="reach-phone"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0177 8964878</div>
