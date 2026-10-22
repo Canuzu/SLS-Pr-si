@@ -99,7 +99,7 @@
   .hero {
     position: relative;
     z-index: 2;
-    height: 89mm;
+    height: 86mm;
     margin-top: -1px;
     background: linear-gradient(128deg, var(--red-light) 0%, var(--red) 42%, var(--red-dark) 78%, var(--red-deep) 100%);
     clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%);
@@ -110,7 +110,7 @@
   .hero-content {
     position: relative;
     z-index: 2;
-    padding: 11mm calc(14mm + var(--b)) 0;
+    padding: 10mm calc(14mm + var(--b)) 0;
     width: calc(140mm + var(--b));
   }
   .kicker {
@@ -166,7 +166,7 @@
     position: absolute;
     z-index: 4;
     right: calc(15mm + var(--b));
-    top: calc(91mm + var(--b));
+    top: calc(88mm + var(--b));
     width: 33mm;
     height: 33mm;
     border-radius: 50%;
@@ -180,7 +180,7 @@
     position: relative;
     z-index: 1;
     margin-top: -1mm;
-    padding: 5mm calc(14mm + var(--b)) 0;
+    padding: 4mm calc(14mm + var(--b)) 0;
   }
   .section-head { margin-bottom: 3.4mm; }
   .eyebrow {
@@ -201,14 +201,14 @@
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4.2mm;
+    gap: 3.8mm;
   }
   .card {
     position: relative;
     background: #fff;
     border-radius: 2.2mm;
     border: .3mm solid var(--line);
-    padding: 5.4mm 5mm 5.4mm 4.6mm;
+    padding: 4.8mm 5mm 4.8mm 4.6mm;
     display: grid;
     grid-template-columns: 11.5mm 1fr;
     column-gap: 3.2mm;
@@ -217,7 +217,7 @@
   .card::after {
     content: "";
     position: absolute;
-    left: 0; top: 5.4mm; bottom: 5.4mm;
+    left: 0; top: 4.8mm; bottom: 4.8mm;
     width: .7mm;
     background: var(--red);
     border-radius: 0 .4mm .4mm 0;
@@ -246,11 +246,6 @@
     margin-top: 1.6mm;
   }
   .a .hl { color: var(--red); }
-  .note {
-    font-size: 8.4pt;
-    color: var(--text);
-    margin-top: 1.4mm;
-  }
   .card:not(.cta) > div:nth-child(2) { align-self: center; }
   .lead { display: flex; flex-direction: column; align-items: flex-start; gap: 2.6mm; }
   .icon {
@@ -467,7 +462,7 @@
       </g>
     </svg>
     <!-- speed lines -->
-    <svg style="position:absolute; right:calc(58mm + var(--b)); top:50mm; width:24mm; height:26mm; z-index:1" viewBox="0 0 36 40" preserveAspectRatio="none" aria-hidden="true">
+    <svg style="position:absolute; right:calc(58mm + var(--b)); top:47mm; width:24mm; height:26mm; z-index:1" viewBox="0 0 36 40" preserveAspectRatio="none" aria-hidden="true">
       <g stroke="#fff" stroke-linecap="round" fill="none">
         <line x1="14" y1="8"  x2="35" y2="8"  stroke-opacity=".22" stroke-width="1"/>
         <line x1="4"  y1="17" x2="35" y2="17" stroke-opacity=".30" stroke-width="1"/>
@@ -529,8 +524,7 @@
         <div class="lead"><div class="num">03</div><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div></div>
         <div>
           <div class="q">Wie lange dauert die Beratung?</div>
-          <div class="a">Mind. 2 Termine<br>à 60–90 Min.</div>
-          <div class="note">(Keiner muss Mandant werden)</div>
+          <div class="a">Mind. 2 Termine<br>à 60–90 Min.<br>(Keiner muss<br>Mandant werden)</div>
         </div>
       </article>
 
