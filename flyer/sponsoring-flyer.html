@@ -46,16 +46,6 @@
     background: #fff;
   }
   .logo { height: 21.5mm; display: block; }
-  .club-wrap {
-    display: flex;
-    align-items: center;
-    gap: 4.4mm;
-  }
-  .club-logo {
-    display: block;
-    width: 23mm;
-    height: 23mm;
-  }
   .club {
     text-align: right;
     display: flex;
@@ -170,10 +160,11 @@
     width: 33mm;
     height: 33mm;
     border-radius: 50%;
+    overflow: hidden;
     background: #fff;
-    transform: rotate(-8deg);
+    box-shadow: 0 0 0 .9mm #fff;
   }
-  .badge svg { width: 100%; height: 100%; display: block; }
+  .badge img { width: 100%; height: 100%; display: block; transform: scale(1.015); }
 
   /* ---------- Steps ---------- */
   .steps {
@@ -433,13 +424,10 @@
   <!-- Header -->
   <header class="header">
     <img class="logo" src="swisslife-select-logo.png" alt="Swiss Life Select">
-    <div class="club-wrap">
-      <div class="club">
-        <span class="club-kicker">Partner im Sportsponsoring</span>
-        <span class="club-name">VfB Schleiden</span>
-        <span class="club-sport">Handball</span>
-      </div>
-      <img class="club-logo" src="vfb-schleiden-logo.png" alt="VfB Schleiden e.V.">
+    <div class="club">
+      <span class="club-kicker">Partner im Sportsponsoring</span>
+      <span class="club-name">VfB Schleiden</span>
+      <span class="club-sport">Handball</span>
     </div>
   </header>
 
@@ -480,20 +468,9 @@
     </div>
   </section>
 
-  <!-- Sponsor badge -->
-  <div class="badge" aria-hidden="true">
-    <svg viewBox="0 0 100 100">
-      <defs>
-        <path id="ring" d="M50 50 m-37 0 a37 37 0 1 1 74 0 a37 37 0 1 1 -74 0"/>
-      </defs>
-      <circle cx="50" cy="50" r="49.1" fill="none" stroke="#D42034" stroke-width="1.6"/>
-      <circle cx="50" cy="50" r="45.6" fill="none" stroke="#EFC3C9" stroke-width=".5"/>
-      <text font-family="Inter, sans-serif" font-size="6.9" font-weight="700" fill="#D42034">
-        <textPath href="#ring" startOffset="0" textLength="230" lengthAdjust="spacing">STOLZER SPONSOR · VFB SCHLEIDEN HANDBALL · </textPath>
-      </text>
-      <circle cx="50" cy="50" r="25" fill="#D42034"/>
-      <g transform="translate(50 50) rotate(-14)" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" id="badgeball"></g>
-    </svg>
+  <!-- Club crest -->
+  <div class="badge">
+    <img src="vfb-schleiden-logo.png" alt="VfB Schleiden e.V.">
   </div>
 
   <!-- Steps -->
@@ -632,13 +609,6 @@
   core.setAttribute("stroke", "none");
   big.appendChild(core);
 
-  const small = document.getElementById("badgeball");
-  const c = document.createElementNS(ns, "circle");
-  c.setAttribute("r", "15"); small.appendChild(c);
-  const p2 = document.createElementNS(ns, "path");
-  p2.setAttribute("d", seams(4.6, 8.6, 11, 15));
-  p2.setAttribute("stroke-width", "1.1");
-  small.appendChild(p2);
 </script>
 </body>
 </html>
