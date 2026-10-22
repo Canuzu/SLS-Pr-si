@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<title>Sportsponsoring VfB Schleiden Handball</title>
+<title>Sportsponsoring VfJ Laurensberg Fußball</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=block" rel="stylesheet">
@@ -148,6 +148,7 @@
     line-height: 1.52;
     color: rgba(255,255,255,.92);
     max-width: 118mm;
+    text-wrap: pretty;
   }
   .intro strong { color: #fff; font-weight: 600; }
 
@@ -164,7 +165,16 @@
     background: #fff;
     box-shadow: 0 0 0 .9mm #fff;
   }
-  .badge img { width: 100%; height: 100%; display: block; transform: scale(1.015); }
+  .badge img { display: block; }
+  /* round crest: fills the circle (scaled slightly to hide the logo's white edge) */
+  .badge--round img { width: 100%; height: 100%; transform: scale(var(--crest-scale, 1)); }
+  /* shield or other shapes: centred on a white disc */
+  .badge--shield {
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 0 .9mm #fff, 0 0 0 1.2mm var(--line);
+  }
+  .badge--shield img { height: 26mm; width: auto; transform: translateY(1mm) scale(var(--crest-scale, 1)); }
 
   /* ---------- Steps ---------- */
   .steps {
@@ -423,11 +433,11 @@
 
   <!-- Header -->
   <header class="header">
-    <img class="logo" src="swisslife-select-logo.png" alt="Swiss Life Select">
+    <img class="logo" src="../assets/swisslife-select-logo.png" alt="Swiss Life Select">
     <div class="club">
       <span class="club-kicker">Partner im Sportsponsoring</span>
-      <span class="club-name">VfB Schleiden</span>
-      <span class="club-sport">Handball</span>
+      <span class="club-name">VfJ Laurensberg</span>
+      <span class="club-sport">Fußball</span>
     </div>
   </header>
 
@@ -441,7 +451,7 @@
       <path d="M-10 46 C 34 36, 78 16, 120 -8" stroke="#fff" stroke-opacity=".06" stroke-width=".5" fill="none"/>
     </svg>
 
-    <!-- Handball line art -->
+    <!-- Ball line art -->
     <svg style="position:absolute; right:calc(-24mm + var(--b)); top:-2mm; width:88mm; height:88mm; z-index:1" viewBox="0 0 200 200" aria-hidden="true">
       <g transform="rotate(-14 100 100)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-linecap="round">
         <circle cx="100" cy="100" r="92" stroke-opacity=".34" stroke-width="2.2"/>
@@ -460,17 +470,17 @@
     </svg>
 
     <div class="hero-content">
-      <div class="kicker">VfB Schleiden Handball <span class="x">&times;</span> Swiss Life Select</div>
+      <div class="kicker">VfJ Laurensberg Fußball <span class="x">&times;</span> Swiss Life Select</div>
       <h1>Sportsponsoring<span class="bang">!</span></h1>
       <p class="tagline">Gemeinsam stark – auf und neben dem Spielfeld.</p>
       <div class="welcome">Herzlich willkommen, lieber Testmandant!</div>
-      <p class="intro">Im Rahmen unseres Sportsponsorings für den <strong>VfB Schleiden Handball</strong> laden Dich <strong>Mathias Braun</strong> und <strong>Lukas Klug</strong> ein, die Finanzberatung von Swiss Life Select als Testmandant kennenzulernen – unverbindlich und auf Augenhöhe.</p>
+      <p class="intro">Im Rahmen unseres Sportsponsorings für den <strong>VfJ Laurensberg Fußball</strong> laden Dich <strong>Mathias Braun</strong> und <strong>Lukas Klug</strong> ein, die Finanzberatung von Swiss Life Select als Testmandant kennenzulernen – unverbindlich und auf Augenhöhe.</p>
     </div>
   </section>
 
   <!-- Club crest -->
-  <div class="badge">
-    <img src="vfb-schleiden-logo.png" alt="VfB Schleiden e.V.">
+  <div class="badge badge--round">
+    <img src="../assets/vfj-laurensberg-logo.png" alt="VfJ Laurensberg" style="--crest-scale: 1">
   </div>
 
   <!-- Steps -->
